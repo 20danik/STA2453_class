@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Toronto shelters",
+    "section": "",
+    "text": "A one-page example of a Quarto website deployed with GitHub Pages, built in Week 2 of STA2453.\nThe data are the City of Toronto’s daily shelter overnight occupancy file, aggregated by date and sector with polars (01-aggregate_shelter.py in the course repo). The graph and table on the Occupancy page are made with ggplot2 and tinytable and are regenerated every time the site renders.\nTo make your own: copy this folder, change the title in _quarto.yml, run quarto render, push, and turn on GitHub Pages from the docs/ folder."
+  },
+  {
+    "objectID": "shelter.html",
+    "href": "shelter.html",
+    "title": "Occupancy",
+    "section": "",
+    "text": "Warning: package 'arrow' was built under R version 4.5.2\n\n\nWarning: package 'dplyr' was built under R version 4.5.2\n\n\nWarning: package 'ggplot2' was built under R version 4.5.2\n\n\nWarning: package 'tinytable' was built under R version 4.5.2\n\n\n\n\n\n\n\n\n\n\nFigure 1: People in Toronto’s shelter system each night in 2026, by sector. Data from Open Data Toronto.\n\n\n\n\n\n\n\n\n\nTable 1: Shelter occupancy on the most recent night in the data, by sector.\n\n\n\n\n\n    \n\n    \n\n    \n    \n    \n      \n        \n        \n              \n                Sector\n                People\n                Bed occupancy\n                Room occupancy\n              \n        \n        \n        \n                \n                  Families\n                  1885\n                  82.4%\n                  98.1%\n                \n                \n                  Men\n                  1539\n                  95.3%\n                  100.0%\n                \n                \n                  Mixed Adult\n                  2346\n                  99.3%\n                  100.0%\n                \n                \n                  Women\n                  853\n                  96.8%\n                  100.0%\n                \n                \n                  Youth\n                  687\n                  93.3%\n                  NA\n                \n        \n      \n    \n\n\n\n\n\n\nThe code is in shelter.qmd; set echo: true on the chunks to show it."
+  }
+]

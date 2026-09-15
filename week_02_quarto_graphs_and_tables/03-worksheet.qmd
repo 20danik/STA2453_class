@@ -1,0 +1,36 @@
+---
+title: "Worksheet"
+author: "Rohan Alexander"
+date: "2026-09-16"
+date-format: "D MMMM, YYYY"
+format: pdf
+bibliography: references.bib
+---
+
+1. (The idea for this exercise is from Liza Bolton.) The following code makes a nice graph. Modify it to create the ugliest graph that you can.
+
+```{r}
+#| eval: false
+library(ggplot2)
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
+  geom_point(size = 2.5, alpha = 0.8) +
+  labs(
+    title = "Iris sepal dimensions",
+    x = "Sepal length (cm)",
+    y = "Sepal width (cm)",
+    colour = "Species"
+  ) +
+  theme_minimal()
+```
+
+2. In groups of two, pick one of this week's readings and make a two-to-five slide summary of its most important points using Quarto. Make a PR that adds your slides to the class GitHub repo.
+
+- Timbers et al., *Reproducible and Trustworthy Workflows for Data Science*, the version control chapters.
+- Polars User Guide, "Getting started" and "Concepts", together with the Parquet page of the Apache Arrow Python docs.
+- Healy, *Data Visualization*, Chapter 1.
+- Alexander, *Telling Stories with Data*, Chapter 5.
+
+3. Make a Quarto website and put it online. Create the project (`quarto create project website`), add a page with one graph of the shelter data from Week 1, set `output-dir: docs` in `_quarto.yml`, render, and push to a new GitHub repository. Under Settings, then Pages, deploy from `main` and the `/docs` folder. Write down the URL and open it on someone else's laptop.
+
+4. Make three graphs from three different Open Data Toronto datasets using ggplot2, and one table using tinytable, and add them as a page on your website.

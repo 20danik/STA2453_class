@@ -1,0 +1,43 @@
+---
+title: "Quiz 1"
+subtitle: "Week 1 readings and work: De Angelis, Bryan, Wilson et al., and the shelter data"
+author: "Rohan Alexander"
+date: "2026-09-16"
+date-format: "D MMMM, YYYY"
+format: pdf
+---
+
+1. Bryan (2018) says Git works best with one kind of file and badly with another. Name both kinds, and give one example of a file from your assignment repo that you would think twice about committing.
+
+\vspace{6cm}
+
+2. Wilson et al. (2017) organise their recommendations under six headings. Name three of them.
+
+\vspace{6cm}
+
+3. Wilson et al. give a rule for raw data. What is it, and where in the project layout they recommend does raw data live relative to the files your scripts generate?
+
+\vspace{6cm}
+
+4. De Angelis (2026) collected posts with which hashtag, from which platform, and over what period?
+
+\vspace{6cm}
+
+5. In a scheduled GitHub Actions workflow, `cron: '0 7 * * *'` runs at 7:00 in which time zone? And which repository setting has to be changed before the workflow can commit the data it collects back to the repo?
+
+\vspace{6cm}
+
+6. Where does De Angelis store the Bluesky username and password, and how does the YAML file refer to them?
+
+\vspace{6cm}
+
+7. The Week 1 demonstration used the daily shelter overnight occupancy data from Open Data Toronto.
+   a. What does one row of the raw file represent?
+   b. The data distinguish two capacity types. Name them, and say why summing `OCCUPIED_BEDS` does not give the number of people in the system.
+   c. To within a thousand, how many people were in Toronto's shelter system on the most recent night in the data?
+
+\vspace{6cm}
+
+8. Your Actions workflow installs `uv` and runs `uv sync` before running the script, even though the script already runs on your laptop. Why?
+
+\vspace{6cm}
