@@ -19,7 +19,7 @@ format: pdf
 
 \vspace{6cm}
 
-4. De Angelis (2026) collected posts with which hashtag, from which platform, and over what period?
+4. De Angelis (2026) says a GitHub Actions workflow file has five core components. Name three of them, and say in one line what one of the three does.
 
 \vspace{6cm}
 
