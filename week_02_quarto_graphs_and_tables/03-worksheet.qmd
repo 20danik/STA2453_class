@@ -3,7 +3,9 @@ title: "Worksheet"
 author: "Rohan Alexander"
 date: "2026-09-16"
 date-format: "D MMMM, YYYY"
-format: pdf
+format:
+  pdf:
+    fontsize: 10pt
 bibliography: references.bib
 ---
 

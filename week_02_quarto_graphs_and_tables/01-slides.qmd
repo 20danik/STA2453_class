@@ -1,5 +1,5 @@
 ---
-title: "Effective graphs"
+title: "More workflow"
 author: "Rohan Alexander"
 date: "2026-09-16"
 date-format: "D MMMM, YYYY"
@@ -14,10 +14,10 @@ format:
 
 ## This week
 
-- Quarto: one plain-text file, rendered to PDF, slides, or a website
-- Graphs with ggplot2 and tables with tinytable, from a Parquet file that Python made
-- A website on GitHub Pages
-- Pull requests, reviews, and conflicts, because next week your group merges slides into the class repo
+- Quarto: one plain-text file, rendered to PDF, slides, or a website.
+- Graphs with `ggplot2` and tables with `tinytable`, from a Parquet file that Python made.
+- A website on GitHub Pages.
+- Pull requests, reviews, and conflicts.
 
 ::: {.notes}
 - Two hours of doing, one hour of Annie.
@@ -26,7 +26,7 @@ format:
 
 ## A `.qmd` file has three parts
 
-```markdown
+````markdown
 ---
 title: "Shelter occupancy"
 format: pdf
@@ -36,12 +36,12 @@ bibliography: references.bib
 Prose in Markdown, with a citation [@healy2019]
 and a cross-reference to @fig-users.
 
-`r ''````{r}
+```{r}
 #| label: fig-users
 #| fig-cap: "People in shelters each night"
 ggplot(daily, aes(date, service_users)) + geom_line()
-`r ''````
 ```
+````
 
 ::: {.notes}
 - Header says what to make. Prose is Markdown. Chunks run at render time.
