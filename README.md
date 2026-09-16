@@ -30,7 +30,7 @@ So the normal cadence of class is three weeks of learning and then in the fourth
     - Part 1: Assignments are due Monday 28 September and the in-class exam is Wednesday 30 September.
     - Part 2: Toronto teams assignments are due Sunday 25 October, US teams assignments are due Monday 2 November, and the in-class exam is Wednesday 4 November.
     - Part 3: Assignments are due Monday 30 November and the in-class exam is Wednesday 2 December.
-    - ISLR/P: Make a PR to the class repo by EOD Monday before class in the week you pick (Week 3, 5, 6, 7, 9, 10).
+    - ISLR/P: Make a PR to the class repo (https://github.com/RohanAlexander/sta2453) by EOD Monday before class in the week you pick (Week 3, 5, 6, 7, 9, 10).
     - Final exam: During exam period.
     - All submissions must be made by the end of the day. Extensions are difficult to accommodate because I need time to personalize the exam.
 - Team size:
