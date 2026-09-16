@@ -19,7 +19,7 @@ bibliography: references.bib
 
 \newpage
 
-4. Decide on a partner, and pick a week that you would like to own. Make a GitHub account if needed, then branch and make a PR to the class repo - https://github.com/RohanAlexander/sta2453_example - adding a folder for that week (nicely formatted e.g. week_10), with a README file that contains your names.
+4. Decide on a partner, and pick a week that you would like to own. Make a GitHub account if needed, then branch and make a PR to the class repo - https://github.com/RohanAlexander/sta2453 - adding a folder for that week (nicely formatted e.g. week_10), with a README file that contains your names.
 
 \newpage
 

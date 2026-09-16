@@ -7,7 +7,7 @@ format: pdf
 bibliography: references.bib
 ---
 
-Due: [DATE], before class.
+Due: Wednesday 16 September, before class.
 
 # What you will do
 
