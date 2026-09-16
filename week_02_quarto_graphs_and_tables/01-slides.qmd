@@ -4,6 +4,7 @@ author: "Rohan Alexander"
 date: "2026-09-16"
 date-format: "D MMMM, YYYY"
 bibliography: references.bib
+engine: markdown
 format:
   revealjs:
     slide-number: "c/t"
@@ -31,6 +32,7 @@ format:
 title: "Shelter occupancy"
 format: pdf
 bibliography: references.bib
+engine: markdown
 ---
 
 Prose in Markdown, with a citation [@healy2019]
