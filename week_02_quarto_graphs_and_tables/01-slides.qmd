@@ -52,22 +52,22 @@ ggplot(daily, aes(date, service_users)) + geom_line()
 
 ## Why this matters for the Donaldson paper
 
-- Every number, graph, and table in the PDF comes from code that ran on the data
-- Change the data, render again, everything updates
-- A reader with the repo can check any figure
-- Pasted-in figures cannot be checked and go stale
+- Everything (tables, graphs) in the PDF comes from code that ran on the data 😎
+- When we change the data we can render it again (or have a GitHub ACtions to do that automatically), and then everything updates 😎
+- A reader with the repo can check any figure 😎
+- Pasted-in figures cannot be checked and go stale 😢
 
-## The handoff between languages
+## You can use both Python and R
 
 ```
 aggregate_shelter.py  --polars-->  data/shelter_daily.parquet  --arrow-->  02-demo.qmd (R)
 ```
 
-- Python does the data work: download, clean, aggregate, write Parquet
-- R does the graphs and tables: `arrow::read_parquet()`, ggplot2, tinytable
-- Parquet keeps the types, so a date is still a date on the other side
+- For instance, it's common to use Python for scraping or interacting with an API: download, clean, aggregate, write Parquet.
+- Then you could use R to make graphs and tables: `arrow::read_parquet()`, `ggplot2`, `tinytable`.
+- Parquet keeps the types, so a date is still a date!
 
-## ggplot2 in one slide
+## `ggplot2` hello world!
 
 ```r
 daily |>
@@ -78,9 +78,9 @@ daily |>
 ```
 
 - Data, then aesthetics (`aes`), then a geometry, then labels
-- Everything after the graphs lecture is about the choices inside those four lines
+- We use a "grammar" of graphics.
 
-## tinytable in one slide
+## `tinytable` hello world!
 
 ```r
 latest |>
@@ -89,10 +89,9 @@ latest |>
   format_tt(escape = TRUE)
 ```
 
-- A data frame in, a table out, in PDF, HTML, and Word alike
-- Caption and cross-reference come from the chunk options `label: tbl-...` and `tbl-cap`
+- Caption and cross-reference come from the chunk options `label: tbl-...` and `tbl-cap`.
 
-## A website is a folder
+## A website is just a type of doc
 
 ```yaml
 project:
@@ -106,9 +105,9 @@ website:
       - href: shelter.qmd
 ```
 
-- `quarto render` builds every page into `docs/`
-- GitHub, Settings, Pages, deploy from `main`, folder `/docs`
-- `output-dir: docs` is the line everyone forgets
+- `quarto render` builds every page into `docs/`.
+- GitHub, Settings, Pages, deploy from `main`, folder `/docs`.
+- `output-dir: docs` makes it easier to deploy from GitHub Pages.
 
 ## Pull requests
 

@@ -11,11 +11,9 @@ bibliography: references.bib
 
 Quarto turns a plain-text file with a `.qmd` extension into a PDF, a Word document, a slide deck, or a website. The file has three kinds of content: a YAML header between `---` lines that says what to produce; Markdown prose; and code chunks that run when the file renders, so the numbers, graphs, and tables in the output come from the data every time. This document is a `.qmd`; open `02-demo.qmd` next to the PDF and compare.
 
-The reason to care is the Donaldson paper, and every paper after it. A paper where the figures were pasted in by hand cannot be checked and cannot be updated when the data change. A Quarto paper can be rendered by anyone with the repo.
+A paper where the figures were pasted in by hand cannot be checked and cannot be updated when the data change. A Quarto paper can be rendered by anyone with the repo.
 
-The course stance on languages: data work in Python (uv, polars, Parquet), graphs and tables in R (ggplot2, tinytable). The two meet at a Parquet file, which both read natively and which keeps column types. This document shows the whole handoff.
-
-# The pipeline
+# The workflow from last week
 
 ## Step 1: Python makes the data
 
@@ -25,11 +23,11 @@ The course stance on languages: data work in Python (uv, polars, Parquet), graph
 uv run aggregate_shelter.py
 ```
 
-It writes `data/shelter_daily.parquet`. Parquet rather than CSV because the date column stays a date, the counts stay integers, and the file is a tenth of the size.
+It writes `data/shelter_daily.parquet`. Parquet rather than CSV!
 
 ## Step 2: R reads it
 
-Every chunk below runs when this document renders. The first one reads the Parquet file with the `arrow` package.
+This chunk runs when this document renders. The first one reads the Parquet file with the `arrow` package.
 
 ```{r}
 #| message: false
@@ -58,14 +56,16 @@ daily |>
   theme_minimal()
 ```
 
-@fig-users is a cross-reference: the `label` on the chunk starts with `fig-`, so Quarto numbers the figure and the reference updates itself if figures move. Three things from the Healy and Alexander readings are in that graph: it has labelled axes with units, the legend is named, and the ordering of the lines carries information (Mixed Adult is the largest sector). One thing to notice and decide about: ggplot2 sets the y-axis range from the data, so it does not start at zero. For a line plot of levels that is defensible; for a bar chart it would not be, and `expand_limits(y = 0)` fixes it.
+@fig-users is a cross-reference: the `label` on the chunk starts with `fig-`, so Quarto numbers the figure and the reference updates itself if figures move. Three things: the graph has labelled axes with units, the legend is named, and the ordering of the lines carries information.
 
 ## Step 4: a table
 
 ```{r}
 #| label: tbl-latest
 #| tbl-cap: "Shelter occupancy on the most recent night in the data, by sector."
-latest <- daily |>
+
+latest <- 
+  daily |>
   filter(date == max(date)) |>
   mutate(
     beds = if_else(capacity_beds > 0, occupied_beds / capacity_beds, NA),
@@ -84,9 +84,9 @@ tt(latest, digits = 3) |>
   format_tt(escape = TRUE)
 ```
 
-@tbl-latest is the same idea for a table. Two habits to copy: the table has a caption that says what the rows are and when the data are from, and the occupancy rate is computed in the code, not typed in. Notice also that Families is almost entirely room-based: family shelters and hotel programs report rooms, not beds, so summing `occupied_beds` across sectors undercounts people by thousands. That is what the quiz question about the shelter numbers was getting at, and it is the kind of thing a table makes visible and a single total hides.
+@tbl-latest is the same idea for a table. The table has a caption that says what the rows are and when the data are from. In terms of measurement, notice that Families may be room-based and so could undercount.
 
-## Step 5: a citation
+## Step 5: Citations
 
 Citations come from `references.bib` and the `bibliography` line in the header. Writing `@healy2019` gives @healy2019, and `[@healy2019]` gives a parenthetical [@healy2019]. The reference list is added at the end automatically.
 
@@ -133,8 +133,6 @@ quarto render
 
 puts the finished HTML in `docs/`. That folder name is the trick for GitHub Pages: push the repo to GitHub, then under Settings, Pages, choose "Deploy from a branch", branch `main`, folder `/docs`. A minute later the site is at `https://<username>.github.io/<repo>/`. Every time you render and push, the site updates. Commit `docs/`; it is the product.
 
-The `output-dir` line is the one people forget. Without it Quarto renders into `_site/`, which GitHub Pages cannot see.
-
 # Working in groups: pull requests and conflicts
 
 Next week's ISLR/P group needs to get its slides into the class repo, and the Part 2 teams will share one repo for a month. The mechanism for both is the pull request.
@@ -171,5 +169,7 @@ Two rules that prevent most conflicts: pull before you start (`git pull`), and k
 # What to do in the worksheet
 
 Question 3 builds a website like `website_example/` and puts it on GitHub Pages. Question 2 is your first PR to the class repo. Question 4 is three graphs and a table of your own, on the website. If you finish, make a conflict with your neighbour and fix it.
+
+\newpage
 
 # References
